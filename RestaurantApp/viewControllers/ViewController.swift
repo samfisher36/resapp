@@ -19,7 +19,7 @@ struct cellData {
 class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,NetworkInteractionDelegate,UITextFieldDelegate {
  
     
-    
+    @IBOutlet weak var slider:MySlider!
     
     var currentOrder =  [CurrentOrders()]
     
@@ -28,6 +28,8 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     @IBOutlet weak var lblHeaderName:UILabel!
     @IBOutlet weak var lblTable:UILabel!
+    
+    @IBOutlet weak var noorder:UILabel!
     
     @IBOutlet weak var header:UIView!
     
@@ -38,21 +40,27 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     var orderId = ""
     
     
+    
+    
     func onSuccess(requestId: Int, response: AFDataResponse<Any>) {
         
         DispatchQueue.main.async {
             self.stoploader()
+            
         }
         
         switch requestId {
         case Constant.REQUEST_ID.CURRENT_ORDER:
             currentOrder.removeAll()
+            tableViewData.removeAll()
             
             currentOrder = try! JSONDecoder().decode([CurrentOrders].self, from: response.data!)
             
             for i in currentOrder {
                 tableViewData.append(cellData(opened: false, title: i.user_name, sectionData: i))
             }
+            
+            noorder.text = String(currentOrder.count)
             
             
             do {
@@ -525,6 +533,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (tableView == majorTableView) {
+            
+            return UITableView.automaticDimension
+            
             var rows = 0
             var cust = 0
             var footerHeight = 0
@@ -532,6 +543,8 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             var custHeight = 0
             var noteHeight = 0
             var paymentHeader = 0
+            
+            
             
             if (currentOrder[tableView.tag].batch.count <= 1) {
                 for object in currentOrder[tableView.tag].batch[0].items {
@@ -1344,6 +1357,8 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        slider.setThumbImage(UIImage.init(named: "burger"), for: .normal)
+        setNavBar()
     }
     
 

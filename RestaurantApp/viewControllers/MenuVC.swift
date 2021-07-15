@@ -12,7 +12,7 @@ class MenuVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     @IBOutlet weak var lblName:UILabel!
     @IBOutlet weak var dp_img:UIImageView!
     
-    var menu = ["Current Orders","My Previous Order","Analytics","Logout"]
+    var menu = ["Current Orders","My Previous Order","Analytics","Leaderboard","Logout"]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menu.count
@@ -38,8 +38,10 @@ class MenuVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
         } else if (indexPath.row == 2) {
             self.performSegue(withIdentifier: "analytics", sender: self)
         }
-        else if (indexPath.row == 3) {
+        else if (indexPath.row == 4) {
             confirmLogout()
+        } else {
+            self.performSegue(withIdentifier: "leader", sender: self)
         }
     }
     

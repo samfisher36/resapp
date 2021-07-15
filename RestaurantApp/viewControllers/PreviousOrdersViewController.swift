@@ -31,6 +31,16 @@ extension UICollectionViewCell {
 
 class PreviousOrdersViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, NetworkInteractionDelegate,UICollectionViewDelegateFlowLayout,CalendarDateRangePickerViewControllerDelegate {
     
+    @IBOutlet weak var from_view: UIView!
+    @IBOutlet weak var to_view: UIView!
+    
+    @IBOutlet weak var from: UILabel!
+    @IBOutlet weak var to: UILabel!
+    
+    @IBOutlet weak var total_orders: UILabel!
+    @IBOutlet weak var total_amount: UILabel!
+    @IBOutlet weak var net_rec: UILabel!
+    
     var previous_orders = [PreviousOrders]()
     @IBOutlet weak var no_orders: UILabel!
     @IBOutlet weak var previous_order_collection: UICollectionView!
@@ -50,6 +60,15 @@ class PreviousOrdersViewController: UIViewController, UICollectionViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavBar()
+        
+        from_view.layer.cornerRadius = 10
+        from_view.clipsToBounds = true
+        from_view.layer.borderWidth = 1
+        
+        to_view.layer.cornerRadius = 10
+        to_view.clipsToBounds = true
+        to_view.layer.borderWidth = 1
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
@@ -63,11 +82,15 @@ class PreviousOrdersViewController: UIViewController, UICollectionViewDataSource
         
         
         
-        dateFormatter.dateFormat = "dd MMM"
+        dateFormatter.dateFormat = "dd MMM yyyy"
         let startDateStr1 = dateFormatter.string(from: startDate!)
         let endDateStr1 = dateFormatter.string(from: endDate)
         
-        self.dateBtn.setTitle(startDateStr1 + "-" + endDateStr1, for: .normal)
+        //self.dateBtn.setTitle(startDateStr1 + "-" + endDateStr1, for: .normal)
+        
+        from.text = startDateStr1
+        to.text = endDateStr1
+        
         
         let network_call = NetworkBuilder()
         loader()
@@ -114,18 +137,38 @@ class PreviousOrdersViewController: UIViewController, UICollectionViewDataSource
         //cell.shadowDecorate()
         
         
+        cell.clipsToBounds = true
+        cell.layer.cornerRadius = 10
+        cell.layer.borderWidth = 1
+        cell.layer.borderColor = UIColor.black.cgColor
+        
+        cell.srno.setTitle("Sr no " + String(indexPath.row + 1), for: .normal)
+        
+        
         let pd = previous_orders[indexPath.row]
        
         cell.lbl_name.text = pd.user_name
         cell.lbl_oid.text = String(pd.order_id)
         cell.lbl_total.text = String(pd.grand_total)
+        
+        if (pd.settlement_status == "Pending") {
+            cell.lbl_status.textColor  = UIColor.red
+        }else {
+            cell.lbl_status.textColor  = UIColor.green
+        }
         cell.lbl_status.text = pd.settlement_status
+        
+        
         cell.lbl_paymentMethod.text = pd.payment_type
         cell.lbl_orderedOn.text = pd.timestamp
         cell.lbl_netrec.text = String(pd.amount_transferrable)
         
         cell.delegate = self
         cell.previous_order = pd
+        
+        
+        
+        
         
         return cell
     }
@@ -183,7 +226,7 @@ class PreviousOrdersViewController: UIViewController, UICollectionViewDataSource
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width:previous_order_collection.frame.size.width * 0.98 , height: 320)
+        return CGSize(width:previous_order_collection.frame.size.width * 0.98 , height: 370)
     }
     
     
@@ -191,7 +234,29 @@ class PreviousOrdersViewController: UIViewController, UICollectionViewDataSource
         stoploader()
         let jsonData = response.data
         
+//        var response_data:[Any]?
+//        
+//        do {
+//            response_data =  try! JSONSerialization.jsonObject(with: response.data!, options: .mutableLeaves) as! [Any]
+//            
+//            print(response_data)
+//            
+//        }catch {
+//            
+//        }
+        
         previous_orders = try! JSONDecoder().decode([PreviousOrders].self, from: jsonData!)
+        
+        total_orders.text = String(previous_orders.count)
+        
+        var amount = 0.0
+        for obj in previous_orders {
+            amount =  amount + Double(obj.grand_total)
+        }
+        
+        amount = amount.rounded(toPlaces: 2)
+        
+        total_amount.text = String (amount)
         
         if(previous_orders.count == 0) {
             isHiddenNoOrders(hide: false)
@@ -245,6 +310,8 @@ class PreviousOrdersCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var lbl_paymentMethod: UILabel!
     @IBOutlet weak var lbl_netrec: UILabel!
     @IBOutlet weak var lbl_status: UILabel!
+    
+    @IBOutlet weak var srno: UIButton!
     
     var previous_order: PreviousOrders?
     var delegate: PreviousOrdersCellDelegate?

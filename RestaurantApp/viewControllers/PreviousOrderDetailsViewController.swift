@@ -21,9 +21,9 @@ class PreviousOrderDetailsViewController: UIViewController, UITableViewDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setNavBar()
 
-        //navigationController?.t
-        self.setTitle(self.navigationItem)
     }
     
     
@@ -111,7 +111,7 @@ class PreviousOrderDetailsViewController: UIViewController, UITableViewDelegate,
             cell.name.text = dict["user_name"] as! String
             cell.table_no.text = "Table no : \(String(dict["table_id"] as! Int))"
             cell.date.text = "Date \(dict["timestamp"] as! String)"
-            cell.payment_mode.text = "Payment Mode :  \(dict["payment_type"] as! String)"
+           // cell.payment_mode.text = "Payment Mode :  \(dict["payment_type"] as! String)"
             
             cell.order_number.text = "Order Number :  \(String(dict["oid"] as! Int))"
             
@@ -133,10 +133,7 @@ class PreviousOrderDetailsViewController: UIViewController, UITableViewDelegate,
                 cell.customisation.text = items["customisation"] as? String
             }
             
-            if (items.keys.contains("instructions")) {
-            
-                cell.instruction.text = items["instructions"] as? String
-            }
+            cell.category.text = items["category"] as! String
             
             
             cell.item_name.text = (items["name"] as! String)
@@ -156,10 +153,11 @@ class PreviousOrderDetailsViewController: UIViewController, UITableViewDelegate,
             cell.sub_total.text = String(dict["sub_total"] as! Double)
             cell.discount_price.text = String(dict["total_discount"] as! Double)
             
-            cell.cgst.text = String(dict["cgst"]  as! Double)
-            cell.sgst.text = String(dict["sgst"]  as! Double)
+            let tax = (dict["cgst"]  as! Double) + (dict["sgst"] as! Double)
             
-            cell.service_charge.text = String(dict["service_charge"] as! Double)
+            cell.taxes.text = String(tax)
+            
+            //cell.service_charge.text = String(dict["service_charge"] as! Double)
             
             cell.grand_total.text = String(dict["grand_total"] as! Double)
             
@@ -174,11 +172,11 @@ class PreviousOrderDetailsViewController: UIViewController, UITableViewDelegate,
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if (section == 1) {
-            let header = Bundle.main.loadNibNamed("DetailHeader", owner: self, options: .none)![0] as! DetailHeader
+            let header = Bundle.main.loadNibNamed("PrevHeader", owner: self, options: .none)![0] as! UIView
             
-            if (dict.count > 0) {
-                header.price.text = String(dict["grand_total"] as! Double)
-            }
+//            if (dict.count > 0) {
+//                header.price.text = String(dict["grand_total"] as! Double)
+//            }
             return header
         }
         return UIView()
@@ -186,7 +184,7 @@ class PreviousOrderDetailsViewController: UIViewController, UITableViewDelegate,
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if (section == 1) {
-            return 80
+            return 40
         }
         return 0
     }
@@ -216,7 +214,7 @@ class OrderItemsDetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var jain_value: UILabel!
     @IBOutlet weak var customisation: UILabel!
     @IBOutlet weak var total_price: UILabel!
-    @IBOutlet weak var instruction: UILabel!
+    @IBOutlet weak var category: UILabel!
 }
 
 class BillDetailsTableViewCell: UITableViewCell {
@@ -226,6 +224,10 @@ class BillDetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var sgst: UILabel!
     @IBOutlet weak var service_charge: UILabel!
     @IBOutlet weak var grand_total: UILabel!
+    
+    @IBOutlet weak var coupon_disc: UILabel!
+    
+    @IBOutlet weak var taxes: UILabel!
     
     @IBOutlet weak var net_receivable: UILabel!
 }

@@ -23,9 +23,16 @@
 		C240F71725EF9BB70023B5C6 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C240F71625EF9BB70023B5C6 /* LoginVC.swift */; };
 		C258992525E789B700FFD615 /* DetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C258992425E789B700FFD615 /* DetailHeader.swift */; };
 		C26944C925E6897300C8EA44 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C26944C825E6897300C8EA44 /* GoogleService-Info.plist */; };
+		C27F149026A01DA200A89987 /* PrevHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = C27F148F26A01DA200A89987 /* PrevHeader.xib */; };
 		C2A34DD825DBB540005AE220 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A34DD725DBB540005AE220 /* OrderCell.swift */; };
 		C2A34DDB25DBD7FD005AE220 /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A34DDA25DBD7FD005AE220 /* CustomTableView.swift */; };
 		C2A34DF925DC02D4005AE220 /* ItemDetailsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A34DF825DC02D4005AE220 /* ItemDetailsHeader.swift */; };
+		C2B2544C269D7DFE00BD2B8B /* AnalyticsCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B2544B269D7DFE00BD2B8B /* AnalyticsCell1.swift */; };
+		C2B2544F269DD17000BD2B8B /* MySlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B2544E269DD17000BD2B8B /* MySlider.swift */; };
+		C2B25452269EBAB500BD2B8B /* NavTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2B25451269EBAB500BD2B8B /* NavTitle.xib */; };
+		C2B25455269EBB1600BD2B8B /* NavTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B25454269EBB1600BD2B8B /* NavTitle.swift */; };
+		C2B25458269ECC9E00BD2B8B /* LeadeboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B25457269ECC9E00BD2B8B /* LeadeboardVC.swift */; };
+		C2B7B194269EF2C700CE0107 /* LeaderboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B7B193269EF2C700CE0107 /* LeaderboardCell.swift */; };
 		C2B9F15E25DD248700074F3D /* GetBillFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2B9F15D25DD248700074F3D /* GetBillFooter.xib */; };
 		C2B9F16125DD26D700074F3D /* GetBillFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B9F16025DD26D700074F3D /* GetBillFooter.swift */; };
 		C2D5935F25DA585500D10201 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D5935E25DA585500D10201 /* AppDelegate.swift */; };
@@ -65,10 +72,17 @@
 		C240F71625EF9BB70023B5C6 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		C258992425E789B700FFD615 /* DetailHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeader.swift; sourceTree = "<group>"; };
 		C26944C825E6897300C8EA44 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C27F148F26A01DA200A89987 /* PrevHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrevHeader.xib; sourceTree = "<group>"; };
 		C2A34DD725DBB540005AE220 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
 		C2A34DDA25DBD7FD005AE220 /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
 		C2A34DDD25DBE73F005AE220 /* RestaurantApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RestaurantApp.entitlements; sourceTree = "<group>"; };
 		C2A34DF825DC02D4005AE220 /* ItemDetailsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsHeader.swift; sourceTree = "<group>"; };
+		C2B2544B269D7DFE00BD2B8B /* AnalyticsCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsCell1.swift; sourceTree = "<group>"; };
+		C2B2544E269DD17000BD2B8B /* MySlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySlider.swift; sourceTree = "<group>"; };
+		C2B25451269EBAB500BD2B8B /* NavTitle.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavTitle.xib; sourceTree = "<group>"; };
+		C2B25454269EBB1600BD2B8B /* NavTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavTitle.swift; sourceTree = "<group>"; };
+		C2B25457269ECC9E00BD2B8B /* LeadeboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadeboardVC.swift; sourceTree = "<group>"; };
+		C2B7B193269EF2C700CE0107 /* LeaderboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardCell.swift; sourceTree = "<group>"; };
 		C2B9F15D25DD248700074F3D /* GetBillFooter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GetBillFooter.xib; sourceTree = "<group>"; };
 		C2B9F16025DD26D700074F3D /* GetBillFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBillFooter.swift; sourceTree = "<group>"; };
 		C2D5935B25DA585500D10201 /* RestaurantApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestaurantApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +157,7 @@
 				C214AAAF25E3895300DCA73C /* MenuVC.swift */,
 				C20EEF9325E4EDB30022ACDC /* AnalyticsVC.swift */,
 				C240F71625EF9BB70023B5C6 /* LoginVC.swift */,
+				C2B25457269ECC9E00BD2B8B /* LeadeboardVC.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -165,6 +180,10 @@
 				C258992425E789B700FFD615 /* DetailHeader.swift */,
 				93123BD8269C4D70003A507D /* MainHeader.xib */,
 				93123BDA269C4E93003A507D /* MainHeader.swift */,
+				C2B25451269EBAB500BD2B8B /* NavTitle.xib */,
+				C2B25454269EBB1600BD2B8B /* NavTitle.swift */,
+				C2B7B193269EF2C700CE0107 /* LeaderboardCell.swift */,
+				C27F148F26A01DA200A89987 /* PrevHeader.xib */,
 			);
 			path = xibs;
 			sourceTree = "<group>";
@@ -215,7 +234,9 @@
 				C2A34DE025DBEB75005AE220 /* Extensions */,
 				C2D5939F25DA77F500D10201 /* Model */,
 				C20EEF9625E4F0A40022ACDC /* AnalyticsCell.swift */,
+				C2B2544B269D7DFE00BD2B8B /* AnalyticsCell1.swift */,
 				C2F120DA25F0EA0100B6E2DD /* MenuCell.swift */,
+				C2B2544E269DD17000BD2B8B /* MySlider.swift */,
 			);
 			path = RestaurantApp;
 			sourceTree = "<group>";
@@ -299,8 +320,10 @@
 				C2D5936B25DA585600D10201 /* Assets.xcassets in Resources */,
 				93123BD9269C4D70003A507D /* MainHeader.xib in Resources */,
 				C20EEFD925E53A140022ACDC /* DetailHeader.xib in Resources */,
+				C2B25452269EBAB500BD2B8B /* NavTitle.xib in Resources */,
 				C26944C925E6897300C8EA44 /* GoogleService-Info.plist in Resources */,
 				C2D5939725DA676C00D10201 /* ItemShowFooter.xib in Resources */,
+				C27F149026A01DA200A89987 /* PrevHeader.xib in Resources */,
 				C2D5936625DA585500D10201 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,21 +386,26 @@
 				C2D5938625DA5C8400D10201 /* NetworkInteractionDelegate.swift in Sources */,
 				C20EEF9725E4F0A40022ACDC /* AnalyticsCell.swift in Sources */,
 				C2D5938C25DA60F300D10201 /* OrdersItemCell.swift in Sources */,
+				C2B25458269ECC9E00BD2B8B /* LeadeboardVC.swift in Sources */,
 				C2A34DDB25DBD7FD005AE220 /* CustomTableView.swift in Sources */,
 				C2A34DF925DC02D4005AE220 /* ItemDetailsHeader.swift in Sources */,
 				C2D5935F25DA585500D10201 /* AppDelegate.swift in Sources */,
+				C2B2544F269DD17000BD2B8B /* MySlider.swift in Sources */,
 				C2D593A425DA784000D10201 /* Items.swift in Sources */,
 				C2A34DD825DBB540005AE220 /* OrderCell.swift in Sources */,
 				C258992525E789B700FFD615 /* DetailHeader.swift in Sources */,
 				C2D5937E25DA5A7500D10201 /* NetworkBuilder.swift in Sources */,
 				C2D593A725DA8EB300D10201 /* Extensions.swift in Sources */,
+				C2B25455269EBB1600BD2B8B /* NavTitle.swift in Sources */,
 				93123BDB269C4E93003A507D /* MainHeader.swift in Sources */,
 				C2D593A325DA784000D10201 /* Batch.swift in Sources */,
 				C2D5939D25DA77F000D10201 /* CurrentOrders.swift in Sources */,
 				C20EEF9425E4EDB30022ACDC /* AnalyticsVC.swift in Sources */,
 				C214AA8625E1133700DCA73C /* AddItemView.swift in Sources */,
+				C2B7B194269EF2C700CE0107 /* LeaderboardCell.swift in Sources */,
 				C214AAB025E3895300DCA73C /* MenuVC.swift in Sources */,
 				C2D5939A25DA695400D10201 /* ItemShowFooter.swift in Sources */,
+				C2B2544C269D7DFE00BD2B8B /* AnalyticsCell1.swift in Sources */,
 				C240F71725EF9BB70023B5C6 /* LoginVC.swift in Sources */,
 				C214AA6425E0F0DC00DCA73C /* PreviousOrdersViewController.swift in Sources */,
 				C2D5937A25DA5A6000D10201 /* Constant.swift in Sources */,

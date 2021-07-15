@@ -21,6 +21,9 @@ class Constant: NSObject {
         //static let TRIAL: String
         //    = DOMAIN_NAME + "restaurant/9999"
         
+        static let LEADERBOARD: String
+            = DOMAIN_NAME + "analytics/restaurant/NPDleaderboard/"
+        
         static let LOGIN: String
             = DOMAIN_NAME + "login"
    
@@ -131,6 +134,8 @@ class Constant: NSObject {
         static let ANALYTICS_2: Int = 17
         static let ANALYTICS_3: Int = 18
         static let LOGIN: Int = 19
+        
+        static let LEARBOARD: Int = 20
   
     }
     

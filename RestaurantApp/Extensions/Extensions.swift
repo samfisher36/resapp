@@ -36,6 +36,22 @@ extension UIColor {
 
 extension UIViewController {
     
+    
+    func setNavBar () {
+        let url = UserDefaults.standard.value(forKey: "photo_url") as! String
+        
+        let name = UserDefaults.standard.value(forKey: "name") as! String
+        
+        
+        let view = Bundle.main.loadNibNamed("NavTitle", owner: self, options: .none)![0] as! NavTitle
+        
+        view.title.text = name
+        
+        view.img.sd_setImage(with: URL(string: url.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)!), completed: nil)
+        
+        self.navigationItem.titleView = view
+    }
+    
   
     func loader() {
         let loader = UIActivityIndicatorView.init(style: .whiteLarge)
@@ -159,5 +175,13 @@ extension UITextField{
     @objc func doneButtonAction()
     {
         self.resignFirstResponder()
+    }
+}
+extension UIView {
+   func roundCorners(corners: UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        layer.mask = mask
     }
 }
