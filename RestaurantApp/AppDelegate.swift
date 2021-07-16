@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
 
     var window: UIWindow?
     var timer:Timer?
+    //what 
     
     var audioPlayer: AVAudioPlayer?
 
