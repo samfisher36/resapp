@@ -166,11 +166,22 @@ class PreviousOrdersViewController: UIViewController, UICollectionViewDataSource
         cell.delegate = self
         cell.previous_order = pd
         
+        cell.invoice_btn.tag = indexPath.row
         
+        
+        cell.invoice_btn.addTarget(self, action: #selector(showinvoice(sender:)), for: .touchUpInside)
         
         
         
         return cell
+    }
+    
+    @objc func showinvoice(sender:UIButton) {
+        let tag = sender.tag
+        let pd = previous_orders[tag]
+        
+        self.performSegue(withIdentifier: "invoice", sender: pd)
+        
     }
     
     @IBAction func openDate () {
@@ -289,6 +300,10 @@ class PreviousOrdersViewController: UIViewController, UICollectionViewDataSource
         if(segue.identifier == "SegueShowOrderDetails") {
             let orderDetailsVC = segue.destination as! PreviousOrderDetailsViewController
             orderDetailsVC.previous_order = sender as? PreviousOrders
+        } else if (segue.identifier == "invoice") {
+            let invoice = segue.destination as! InvoiceVC
+            invoice.previous_order  = sender as! PreviousOrders
+            
         }
     }
     
@@ -312,6 +327,8 @@ class PreviousOrdersCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var lbl_status: UILabel!
     
     @IBOutlet weak var srno: UIButton!
+    
+    @IBOutlet weak var invoice_btn: UIButton!
     
     var previous_order: PreviousOrders?
     var delegate: PreviousOrdersCellDelegate?

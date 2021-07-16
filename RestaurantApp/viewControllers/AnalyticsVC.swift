@@ -41,6 +41,8 @@ class AnalyticsVC: UIViewController,UICollectionViewDataSource,UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        
+        
         if (indexPath.row == 1 || indexPath.row == 4 || indexPath.row == 6) {
             let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "cell2", for: indexPath) as! AnalyticsCell1
             cell.lbldetails.isHidden = false
@@ -94,6 +96,12 @@ class AnalyticsVC: UIViewController,UICollectionViewDataSource,UICollectionViewD
             cell.clipsToBounds = true
             cell.layer.borderColor = UIColor.black.cgColor
             
+            if (indexPath.row == 4) {
+                cell.details_btn.addTarget(self, action: #selector(showtransfer), for: .touchUpInside)
+            } else {
+                
+            }
+            
             return cell
         }
         
@@ -138,8 +146,15 @@ class AnalyticsVC: UIViewController,UICollectionViewDataSource,UICollectionViewD
         cell.clipsToBounds = true
         cell.layer.borderColor = UIColor.black.cgColor
         
+        
+        
+        
         return cell
         
+    }
+    
+    @objc func showtransfer(row:Int) {
+        self.performSegue(withIdentifier: "transfer", sender: self)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -417,14 +432,15 @@ class AnalyticsVC: UIViewController,UICollectionViewDataSource,UICollectionViewD
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let nvc = segue.destination as!  AmountTransferVC
+        nvc.range = lbl_from.text! + "to "  + lbl_to.text!
+        nvc.gross = (dict["gross_revenue"] as! Double).rounded()
+        nvc.addsub = (dict["AAD"] as! Double).rounded()
+        nvc.netrec = (dict["net_revenue"] as! Double).rounded()
+        nvc.cod = (dict1["cod_total"] as! Double).rounded()
+        nvc.net = (dict["net_revenue"] as! Double).rounded()
     }
-    */
+    
 
 }

@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		93123BD9269C4D70003A507D /* MainHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93123BD8269C4D70003A507D /* MainHeader.xib */; };
 		93123BDB269C4E93003A507D /* MainHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93123BDA269C4E93003A507D /* MainHeader.swift */; };
+		93B79FEA26A03CFB0027E749 /* AmountTransferVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B79FE926A03CFB0027E749 /* AmountTransferVC.swift */; };
+		93B79FEC26A03D9D0027E749 /* Transfer1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B79FEB26A03D9D0027E749 /* Transfer1.swift */; };
+		93B79FEE26A03DB60027E749 /* Transfer2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B79FED26A03DB60027E749 /* Transfer2.swift */; };
+		93B79FF026A0517C0027E749 /* InvoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B79FEF26A0517C0027E749 /* InvoiceVC.swift */; };
+		93B79FF226A0640F0027E749 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B79FF126A0640F0027E749 /* SettingVC.swift */; };
 		AE9E11C7788E6C3E2EC1B638 /* Pods_RestaurantApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FABE5B7314615EA2B36EEDE6 /* Pods_RestaurantApp.framework */; };
 		C20EEF9425E4EDB30022ACDC /* AnalyticsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20EEF9325E4EDB30022ACDC /* AnalyticsVC.swift */; };
 		C20EEF9725E4F0A40022ACDC /* AnalyticsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20EEF9625E4F0A40022ACDC /* AnalyticsCell.swift */; };
@@ -59,6 +64,11 @@
 /* Begin PBXFileReference section */
 		93123BD8269C4D70003A507D /* MainHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainHeader.xib; sourceTree = "<group>"; };
 		93123BDA269C4E93003A507D /* MainHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeader.swift; sourceTree = "<group>"; };
+		93B79FE926A03CFB0027E749 /* AmountTransferVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountTransferVC.swift; sourceTree = SOURCE_ROOT; };
+		93B79FEB26A03D9D0027E749 /* Transfer1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transfer1.swift; sourceTree = "<group>"; };
+		93B79FED26A03DB60027E749 /* Transfer2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transfer2.swift; sourceTree = "<group>"; };
+		93B79FEF26A0517C0027E749 /* InvoiceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceVC.swift; sourceTree = "<group>"; };
+		93B79FF126A0640F0027E749 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		C20EEF9325E4EDB30022ACDC /* AnalyticsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsVC.swift; sourceTree = "<group>"; };
 		C20EEF9625E4F0A40022ACDC /* AnalyticsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsCell.swift; sourceTree = "<group>"; };
 		C20EEFD825E53A140022ACDC /* DetailHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailHeader.xib; sourceTree = "<group>"; };
@@ -158,6 +168,9 @@
 				C20EEF9325E4EDB30022ACDC /* AnalyticsVC.swift */,
 				C240F71625EF9BB70023B5C6 /* LoginVC.swift */,
 				C2B25457269ECC9E00BD2B8B /* LeadeboardVC.swift */,
+				93B79FE926A03CFB0027E749 /* AmountTransferVC.swift */,
+				93B79FEF26A0517C0027E749 /* InvoiceVC.swift */,
+				93B79FF126A0640F0027E749 /* SettingVC.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -237,6 +250,8 @@
 				C2B2544B269D7DFE00BD2B8B /* AnalyticsCell1.swift */,
 				C2F120DA25F0EA0100B6E2DD /* MenuCell.swift */,
 				C2B2544E269DD17000BD2B8B /* MySlider.swift */,
+				93B79FEB26A03D9D0027E749 /* Transfer1.swift */,
+				93B79FED26A03DB60027E749 /* Transfer2.swift */,
 			);
 			path = RestaurantApp;
 			sourceTree = "<group>";
@@ -402,12 +417,17 @@
 				C2D5939D25DA77F000D10201 /* CurrentOrders.swift in Sources */,
 				C20EEF9425E4EDB30022ACDC /* AnalyticsVC.swift in Sources */,
 				C214AA8625E1133700DCA73C /* AddItemView.swift in Sources */,
+				93B79FF226A0640F0027E749 /* SettingVC.swift in Sources */,
 				C2B7B194269EF2C700CE0107 /* LeaderboardCell.swift in Sources */,
 				C214AAB025E3895300DCA73C /* MenuVC.swift in Sources */,
 				C2D5939A25DA695400D10201 /* ItemShowFooter.swift in Sources */,
 				C2B2544C269D7DFE00BD2B8B /* AnalyticsCell1.swift in Sources */,
+				93B79FEC26A03D9D0027E749 /* Transfer1.swift in Sources */,
+				93B79FF026A0517C0027E749 /* InvoiceVC.swift in Sources */,
 				C240F71725EF9BB70023B5C6 /* LoginVC.swift in Sources */,
 				C214AA6425E0F0DC00DCA73C /* PreviousOrdersViewController.swift in Sources */,
+				93B79FEA26A03CFB0027E749 /* AmountTransferVC.swift in Sources */,
+				93B79FEE26A03DB60027E749 /* Transfer2.swift in Sources */,
 				C2D5937A25DA5A6000D10201 /* Constant.swift in Sources */,
 				C214AA7B25E0F1E400DCA73C /* User.swift in Sources */,
 			);

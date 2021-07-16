@@ -12,7 +12,7 @@ class MenuVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     @IBOutlet weak var lblName:UILabel!
     @IBOutlet weak var dp_img:UIImageView!
     
-    var menu = ["Current Orders","My Previous Order","Analytics","Leaderboard","Logout"]
+    var menu = ["Current Orders","My Previous Order","Analytics","Leaderboard","Logout","Settings"]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menu.count
@@ -28,6 +28,10 @@ class MenuVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        if (indexPath.row == 5) {
+            self.performSegue(withIdentifier: "setting", sender: self)
+        }
         
         if (indexPath.row == 0) {
             self.navigationController?.popViewController(animated: true)
