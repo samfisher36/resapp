@@ -18,5 +18,6 @@ class MainHeader: UIView {
     @IBOutlet weak var container:UIView!
     
     @IBOutlet weak var img:UIImageView!
+    
 
 }

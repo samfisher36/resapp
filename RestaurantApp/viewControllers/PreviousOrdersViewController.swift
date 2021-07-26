@@ -66,9 +66,7 @@ class PreviousOrdersViewController: UIViewController, UICollectionViewDataSource
         from_view.clipsToBounds = true
         from_view.layer.borderWidth = 1
         
-        to_view.layer.cornerRadius = 10
-        to_view.clipsToBounds = true
-        to_view.layer.borderWidth = 1
+        
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
@@ -88,8 +86,9 @@ class PreviousOrdersViewController: UIViewController, UICollectionViewDataSource
         
         //self.dateBtn.setTitle(startDateStr1 + "-" + endDateStr1, for: .normal)
         
-        from.text = startDateStr1
-        to.text = endDateStr1
+        from.text = startDateStr1 + " To " + endDateStr1
+        
+        
         
         
         let network_call = NetworkBuilder()
@@ -143,6 +142,11 @@ class PreviousOrdersViewController: UIViewController, UICollectionViewDataSource
         cell.layer.borderColor = UIColor.black.cgColor
         
         cell.srno.setTitle("Sr no " + String(indexPath.row + 1), for: .normal)
+        
+        
+        cell.srno.layer.cornerRadius = cell.srno.layer.frame.height / 2
+        cell.srno.clipsToBounds = true
+        cell.srno.layer.borderWidth = 1
         
         
         let pd = previous_orders[indexPath.row]
@@ -215,11 +219,11 @@ class PreviousOrdersViewController: UIViewController, UICollectionViewDataSource
         let newEndDate = Calendar.current.date(byAdding: .day, value: 1, to: endDate)
         let endDate = dateFormatter.string(from: newEndDate!)
         
-        dateFormatter.dateFormat = "dd MMM"
+        dateFormatter.dateFormat = "dd MMM yyyy"
         let startDateStr1 = dateFormatter.string(from: startDate!)
         let endDateStr1 = dateFormatter.string(from: newEndDate!)
         
-        self.dateBtn.setTitle(startDateStr1 + "-" + endDateStr1, for: .normal)
+        from.text = startDateStr1 + " To " + endDateStr1
         
         
         let network_call = NetworkBuilder()
@@ -237,7 +241,7 @@ class PreviousOrdersViewController: UIViewController, UICollectionViewDataSource
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width:previous_order_collection.frame.size.width * 0.98 , height: 370)
+        return CGSize(width:previous_order_collection.frame.size.width * 0.95 , height: 333)
     }
     
     

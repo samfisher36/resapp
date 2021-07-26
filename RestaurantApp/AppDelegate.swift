@@ -11,12 +11,18 @@ import Firebase
 import UserNotificationsUI
 import AVFoundation
 import FirebaseMessaging
+import FirebaseRemoteConfig
+import Alamofire
+import FirebaseCrashlytics
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDelegate, MessagingDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDelegate, MessagingDelegate,NetworkInteractionDelegate {
+    
+    
 
     var window: UIWindow?
     var timer:Timer?
+    var remoteConfig = RemoteConfig.remoteConfig()
     //what 
     
     var audioPlayer: AVAudioPlayer?
@@ -27,6 +33,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         //FirebaseApp.configure()
         
         FirebaseApp.configure()
+        
+        remoteConfig = RemoteConfig.remoteConfig()
+        let settings = RemoteConfigSettings()
+        settings.minimumFetchInterval = 0
+        remoteConfig.configSettings = settings
+        
+        setupRemoteConfigDefaults()
+        
+        fetchRemoteConfig()
         
         Messaging.messaging().delegate = self
         
@@ -59,6 +74,70 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         
         return true
     }
+    
+    func setupRemoteConfigDefaults() {
+        let defaultValue = ["ios_version_restaurant": "2.0.2" as NSObject , "ios_update_required_restaurant":"true" as NSObject]
+        remoteConfig.setDefaults(defaultValue)
+    }
+    
+    func fetchRemoteConfig(){
+        remoteConfig.fetch(withExpirationDuration: 20) { [unowned self] (status, error) in
+            guard error == nil else { print("error now \(error!.localizedDescription)")
+            return }
+        print("Got the value from Remote Config!")
+        remoteConfig.activate()
+        self.displayNewValues()
+    }}
+   
+    
+   
+    
+    func displayNewValues(){
+        let newLabelText = remoteConfig.configValue(forKey: "ios_version_restaurant").stringValue
+        
+        let isRequired = remoteConfig.configValue(forKey: "ios_update_required_restaurant").boolValue
+        
+        let dictionary = Bundle.main.infoDictionary!
+        let version = dictionary["CFBundleShortVersionString"] as! String
+        
+       
+            if (version != newLabelText) {
+                
+                //CALL BACKGROUND API
+                let network_call = NetworkBuilder()
+                
+                network_call.makePostRequest(delegate: self, headers: [], postURL: Constant.URL.SEND_VER, parameters: ["user_id":Auth.auth().currentUser!.uid , "app_version":newLabelText], requestID: 00)
+                
+                if (isRequired) {
+                    let alertController = UIAlertController(title: "Update Required", message: "Please update your app", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "UPDATE", style: .cancel) { [self] (action) in
+                        let appstoreUrl =  "itms-apps://itunes.apple.com/us/app/1551461688"
+                        UIApplication.shared.openURL(URL(string: appstoreUrl)!)
+                    }
+                    alertController.addAction(action)
+                    UIApplication.topViewController()?.present(alertController, animated: true, completion: nil)
+                } else {
+                    let alertController = UIAlertController(title: "Update Required", message: "Please update your app", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "UPDATE", style: .default) { [self] (action) in
+                        let appstoreUrl =  "itms-apps://itunes.apple.com/us/app/1551461688"
+                        UIApplication.shared.openURL(URL(string: appstoreUrl)!)
+                    }
+                    
+                    let action1 = UIAlertAction(title: "No thanks", style: .cancel) { [self] (action) in
+                        alertController.dismiss(animated: true, completion: nil)
+                    }
+                    
+                    alertController.addAction(action)
+                    alertController.addAction(action1)
+                    
+                    UIApplication.topViewController()?.present(alertController, animated: true, completion: nil)
+                }
+            
+        }
+    }
+
+    
+    
     
     func registerAndPlaySound() {
         AudioServicesPlaySystemSound (1054)
@@ -267,6 +346,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 
+    }
+    
+    func onSuccess(requestId: Int, response: AFDataResponse<Any>) {
+        
+    }
+    
+    func onFailure() {
+        
+    }
+    
+    func notAuthorized() {
+        
+    }
+    
+    func noInternetConnectivity() {
+        
     }
     
 }

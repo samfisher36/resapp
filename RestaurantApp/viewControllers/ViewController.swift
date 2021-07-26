@@ -25,7 +25,6 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     var response_data:[Any]?
 
-    
     @IBOutlet weak var lblHeaderName:UILabel!
     @IBOutlet weak var lblTable:UILabel!
     
@@ -39,9 +38,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     var orderId = ""
     
-    
-    
-    
+
     func onSuccess(requestId: Int, response: AFDataResponse<Any>) {
         
         DispatchQueue.main.async {
@@ -200,11 +197,10 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             }
         }
         
-        if (tableViewData[section].opened == true) {
-            return tableViewData[tableView.tag].sectionData.batch[section].items.count
-        }else {
-            return 0
-        }
+
+            
+        return tableViewData[tableView.tag].sectionData.batch[section].items.count
+       
         
         //return currentOrder[tableView.tag].batch[section].items.count
     }
@@ -244,8 +240,8 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         
         if (tableView == majorTableView) {
             
-            
             if (tableViewData[indexPath.section].sectionData.status == "paymentcash") {
+                
                 let cell = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! OrderCell
                 
                 //SET NAME AND TABLE NO
@@ -276,7 +272,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
                 
                 
                 
-                cell.insideTableView.tag = indexPath.row
+                cell.insideTableView.tag = indexPath.section
                 
                 cell.insideTableView.reloadData()
                 cell.layoutSubviews()
@@ -286,6 +282,8 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
                 
                 cell.tag = indexPath.section
                 
+                
+                cell.insideTableView.invalidateIntrinsicContentSize()
                 
                 return cell
             } else if (tableViewData[indexPath.section].sectionData.status == "paymentcomplete" || tableViewData[indexPath.section].sectionData.status == "paymentcard") {
@@ -321,7 +319,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
                 headerView.backgroundColor = UIColor().colorCompleted()
                 
                 
-                cell.insideTableView.tag = indexPath.row
+                cell.insideTableView.tag = indexPath.section
                 
                 cell.insideTableView.reloadData()
                 
@@ -331,6 +329,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
                 
                 cell.tag = indexPath.section
                 
+                cell.insideTableView.invalidateIntrinsicContentSize()
                 
                 return cell
             }
@@ -371,7 +370,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             }
 
             
-            cell.insideTableView.tag = indexPath.row
+            cell.insideTableView.tag = indexPath.section
             
             cell.insideTableView.reloadData()
             
@@ -382,6 +381,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             
             cell.tag = indexPath.section
             
+            cell.insideTableView.invalidateIntrinsicContentSize()
             
             return cell
             
@@ -534,7 +534,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (tableView == majorTableView) {
             
+            
             return UITableView.automaticDimension
+            
             
             var rows = 0
             var cust = 0
@@ -678,7 +680,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             let lbl = UILabel.init(frame: CGRect(x: 0, y: 0, width: 400, height: 60))
             lbl.text = "No Food in queue"
             lbl.font = UIFont.systemFont(ofSize: 30)
-            lbl.center = self.view.center
+            //lbl.center = majorTableView.backgroundView!.center
             lbl.tag = 12345
             tableView.separatorStyle = .none
             tableView.addSubview(lbl)
@@ -698,10 +700,26 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             return 0
         }
         
-        return tableViewData[tableView.tag].sectionData.batch.count
         
-        //return currentOrder[tableView.tag].batch.count
-
+        
+        
+        
+        if (tableViewData[tableView.tag].sectionData.status == "orderplaced") {
+            return tableViewData[tableView.tag].sectionData.batch.count
+        }
+        else if (tableViewData[tableView.tag].sectionData.status == "orderaccepted") {
+            return tableViewData[tableView.tag].sectionData.batch.count
+        }
+        else if (tableViewData[tableView.tag].sectionData.status == "getbill") {
+            return 1
+        }
+        else if (tableViewData[tableView.tag].sectionData.status == "paymentverify") {
+            return 1
+        }
+        else {
+            return 1
+        }
+        
     }
   
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -716,7 +734,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             df.dateFormat = "hh:mm a"
             let str = df.string(from: date_str!)
             
-            view.tablenumber.text = String(tableViewData[section].sectionData.table_id) + "   " + tableViewData[section].sectionData.user_phone + "     " + str
+            view.tablenumber.text = "Table :" + String(tableViewData[section].sectionData.table_id) + "   " + tableViewData[section].sectionData.user_name + "     " + str
             
             view.container.layer.borderWidth = 2
             view.container.clipsToBounds = true
@@ -726,22 +744,32 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             if (tableViewData[section].sectionData.status == "orderplaced") {
                 view.view.backgroundColor = UIColor().colorPlaced()
                 view.container.layer.borderColor = UIColor().colorPlaced().cgColor
+                
+                view.status.text = "Order Placed"
             }
             else if (tableViewData[section].sectionData.status == "orderaccepted") {
                 view.view.backgroundColor = UIColor().colorAccepted()
                 view.container.layer.borderColor = UIColor().colorAccepted().cgColor
+                
+                view.status.text = "Order Accepted"
             }
             else if (tableViewData[section].sectionData.status == "getbill") {
                 view.view.backgroundColor = UIColor().colorGetBill()
                 view.container.layer.borderColor = UIColor().colorGetBill().cgColor
+                
+                view.status.text = "Get Bill"
             }
             else if (tableViewData[section].sectionData.status == "paymentverify") {
                 view.view.backgroundColor = UIColor().colorPaymentVeify()
                 view.container.layer.borderColor = UIColor().colorPaymentVeify().cgColor
+                
+                view.status.text = "Payment Verification"
             }
             else {
                 view.view.backgroundColor = UIColor().colorCompleted()
                 view.container.layer.borderColor = UIColor().colorCompleted().cgColor
+                
+                view.status.text = "Payment Successful"
             }
             
             
@@ -763,7 +791,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         }
         
         let view = Bundle.main.loadNibNamed("ItemDetailsHeader", owner: self, options:.none)![0] as! ItemDetailsHeader
-        if (currentOrder[tableView.tag].batch[section].status == "orderaccepted") {
+        if (tableViewData[tableView.tag].sectionData.batch[section].status == "orderaccepted") {
             view.lblAmount.text = "TIME"
         } else {
             view.lblAmount.text = "AMOUNT"
@@ -1307,9 +1335,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if (tableView == self.majorTableView) {
-            return 100
+            return 88
         }
-        return 50
+        return 40
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -1359,6 +1387,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         // Do any additional setup after loading the view.
         slider.setThumbImage(UIImage.init(named: "burger"), for: .normal)
         setNavBar()
+        
+        //majorTableView.layer.borderWidth = 1
+        //majorTableView.layer.borderColor = UIColor.black.cgColor
     }
     
 

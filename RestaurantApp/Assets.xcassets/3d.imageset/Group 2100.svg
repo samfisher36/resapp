@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #98ad3c;
+      }
+
+      .cls-3 {
+        font-size: 9px;
+        font-family: Montserrat-Medium, Montserrat;
+        font-weight: 500;
+      }
+    </style>
+  </defs>
+  <g id="Group_2100" data-name="Group 2100" transform="translate(-1565 10906)">
+    <rect id="Rectangle_4" data-name="Rectangle 4" class="cls-1" width="24" height="24" transform="translate(1565 -10906)"/>
+    <g id="Group_1589" data-name="Group 1589">
+      <g id="Group_1588" data-name="Group 1588" transform="translate(0.5 0.5)">
+        <path id="Path_4683" data-name="Path 4683" class="cls-2" d="M3.857,5.286A1.433,1.433,0,0,1,5.286,3.857H8.143V1H5.286A4.28,4.28,0,0,0,1,5.286V8.143H3.857Z" transform="translate(1565.5 -10905.5)"/>
+        <path id="Path_4684" data-name="Path 4684" class="cls-2" d="M3.857,20.857V18H1v2.857a4.28,4.28,0,0,0,4.286,4.286H8.143V22.286H5.286A1.433,1.433,0,0,1,3.857,20.857Z" transform="translate(1565.5 -10909.643)"/>
+        <path id="Path_4685" data-name="Path 4685" class="cls-2" d="M20.857,1H18V3.857h2.857a1.433,1.433,0,0,1,1.429,1.429V8.143h2.857V5.286A4.28,4.28,0,0,0,20.857,1Z" transform="translate(1561.357 -10905.5)"/>
+        <path id="Path_4686" data-name="Path 4686" class="cls-2" d="M22.286,20.857a1.433,1.433,0,0,1-1.429,1.429H18v2.857h2.857a4.28,4.28,0,0,0,4.286-4.286V18H22.286Z" transform="translate(1561.357 -10909.643)"/>
+      </g>
+      <text id="_3D" data-name="3D" class="cls-3" transform="translate(1571 -10890)"><tspan x="0" y="0">3D</tspan></text>
+    </g>
+  </g>
+</svg>

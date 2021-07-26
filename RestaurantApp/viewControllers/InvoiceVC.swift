@@ -10,7 +10,7 @@ import UIKit
 import SDWebImage
 import Alamofire
 
-class PreviousOrderDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,NetworkInteractionDelegate {
+class InvoiceVC: UIViewController, UITableViewDelegate, UITableViewDataSource,NetworkInteractionDelegate {
     
     @IBOutlet weak var order_details_table: UITableView!
     
@@ -22,10 +22,10 @@ class PreviousOrderDetailsViewController: UIViewController, UITableViewDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setNavBar()
-        
         order_details_table.layer.borderWidth = 2
         order_details_table.layer.borderColor = UIColor.black.cgColor
+        
+        setNavBar()
 
     }
     
@@ -107,17 +107,26 @@ class PreviousOrderDetailsViewController: UIViewController, UITableViewDelegate,
         switch indexPath.section {
         case 0:
             //RestaurantDetailsTableViewCell
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantDetailsCellId", for: indexPath) as? RestaurantDetailsTableViewCell else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantDetailsCellId", for: indexPath) as? InvoiceCell else {
                 fatalError("The dequeue cell is not an instance of PreviousOrderTableViewCell")
             }
   
             cell.name.text = dict["user_name"] as! String
-            cell.table_no.text = "Table no : \(String(dict["table_id"] as! Int))"
-            cell.date.text = "Date \(dict["timestamp"] as! String)"
+            cell.table_no.text = (String(dict["table_id"] as! Int))
+            cell.date.text = (dict["timestamp"] as! String)
            // cell.payment_mode.text = "Payment Mode :  \(dict["payment_type"] as! String)"
             
-            cell.order_number.text = "Order Number :  \(String(dict["oid"] as! Int))"
+            cell.order_number.text = String(dict["oid"] as! Int)
             
+            cell.resname.text = dict["restaurant_name"] as! String
+            
+            cell.address.text = dict["restaurant_location"] as! String
+            
+            cell.email.text = dict["user_email"] as! String
+            
+            cell.phone.text = dict["user_phone"] as! String
+            
+            cell.cid.text = dict["user_id"] as! String
             
             return cell
         case 1:
@@ -166,10 +175,6 @@ class PreviousOrderDetailsViewController: UIViewController, UITableViewDelegate,
             
             cell.net_receivable.text = String(dict["grand_total"] as! Double)
             
-            if (dict["coupon_applied"] as! Int == 0) {
-                cell.coupon_disc.text = "NA"
-            }
-            
             return cell
        
         default:
@@ -184,11 +189,6 @@ class PreviousOrderDetailsViewController: UIViewController, UITableViewDelegate,
 //            if (dict.count > 0) {
 //                header.price.text = String(dict["grand_total"] as! Double)
 //            }
-            
-            header.layer.borderWidth = 2
-            header.layer.borderColor = UIColor.black.cgColor
-            
-            
             return header
         }
         return UIView()
@@ -203,7 +203,7 @@ class PreviousOrderDetailsViewController: UIViewController, UITableViewDelegate,
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (indexPath.section == 0) {
-            return 160
+            return 330
         }else if (indexPath.section == 1 ) {
             return UITableView.automaticDimension
         } else {
@@ -212,40 +212,16 @@ class PreviousOrderDetailsViewController: UIViewController, UITableViewDelegate,
     }
 }
 
-class RestaurantDetailsTableViewCell: UITableViewCell {
+class InvoiceCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var resname: UILabel!
+    @IBOutlet weak var cid: UILabel!
+    @IBOutlet weak var email: UILabel!
+    @IBOutlet weak var phone: UILabel!
     @IBOutlet weak var table_no: UILabel!
     @IBOutlet weak var date: UILabel!
-    @IBOutlet weak var payment_mode: UILabel!
+    @IBOutlet weak var address: UILabel!
     @IBOutlet weak var order_number: UILabel!
 }
 
-class OrderItemsDetailsTableViewCell: UITableViewCell {
-    @IBOutlet weak var item_name: UILabel!
-    @IBOutlet weak var quantity: UILabel!
-    @IBOutlet weak var jain_value: UILabel!
-    @IBOutlet weak var customisation: UILabel!
-    @IBOutlet weak var total_price: UILabel!
-    @IBOutlet weak var category: UILabel!
-}
 
-class BillDetailsTableViewCell: UITableViewCell {
-    @IBOutlet weak var sub_total: UILabel!
-    @IBOutlet weak var discount_price: UILabel!
-    @IBOutlet weak var cgst: UILabel!
-    @IBOutlet weak var sgst: UILabel!
-    @IBOutlet weak var service_charge: UILabel!
-    @IBOutlet weak var grand_total: UILabel!
-    
-    @IBOutlet weak var coupon_disc: UILabel!
-    
-    @IBOutlet weak var taxes: UILabel!
-    
-    @IBOutlet weak var net_receivable: UILabel!
-}
-
-class OrderDetailsTableViewCell: UITableViewCell {
-    @IBOutlet weak var order_id: UILabel!
-    @IBOutlet weak var payment_mode: UILabel!
-    @IBOutlet weak var date_time: UILabel!
-}

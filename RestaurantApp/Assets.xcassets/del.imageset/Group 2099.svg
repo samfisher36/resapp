@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #535353;
+      }
+    </style>
+  </defs>
+  <g id="Group_2099" data-name="Group 2099" transform="translate(-3003 9977)">
+    <rect id="Rectangle_1751" data-name="Rectangle 1751" class="cls-1" width="24" height="24" transform="translate(3003 -9977)"/>
+    <path id="Path_5431" data-name="Path 5431" class="cls-2" d="M6.286,20.778A2.423,2.423,0,0,0,8.857,23H19.143a2.423,2.423,0,0,0,2.571-2.222V7.444H6.286ZM23,4.111H18.5L17.214,3H10.786L9.5,4.111H5V6.333H23Z" transform="translate(3001 -9978)"/>
+  </g>
+</svg>

@@ -263,11 +263,11 @@ class AnalyticsVC: UIViewController,UICollectionViewDataSource,UICollectionViewD
         let endDate1 = dateFormatter.string(from: newEndDate!)
         
         
-        dateFormatter.dateFormat = "dd MMM"
+        dateFormatter.dateFormat = "dd MMM yyyy"
         let startDateStr = dateFormatter.string(from: startDate!)
         let endDateStr = dateFormatter.string(from: endDate!)
         
-        
+        lbl_from.text = startDateStr + " To " + endDateStr
         
         let network_call = NetworkBuilder()
         loader()
@@ -349,8 +349,8 @@ class AnalyticsVC: UIViewController,UICollectionViewDataSource,UICollectionViewD
         let startDateStr = dateFormatter.string(from: startDate!)
         let endDateStr = dateFormatter.string(from: endDate!)
         
-        lbl_from.text = startDateStr
-        lbl_to.text = endDateStr
+        lbl_from.text = startDateStr + " To " + endDateStr
+        
         
         let network_call = NetworkBuilder()
         loader()
@@ -399,9 +399,7 @@ class AnalyticsVC: UIViewController,UICollectionViewDataSource,UICollectionViewD
         from.clipsToBounds = true
         from.layer.borderWidth = 1
         
-        to.layer.cornerRadius = 10
-        to.clipsToBounds = true
-        to.layer.borderWidth = 1
+        
         
         btn1.layer.cornerRadius = 10
         btn1.clipsToBounds = true

@@ -12,7 +12,7 @@ class MenuVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     @IBOutlet weak var lblName:UILabel!
     @IBOutlet weak var dp_img:UIImageView!
     
-    var menu = ["Current Orders","My Previous Order","Analytics","Leaderboard","Logout","Settings"]
+    var menu = ["Current Orders","My Previous Order","Analytics","Menu categories","Leaderboard","Logout","Settings"]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menu.count
@@ -29,8 +29,9 @@ class MenuVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
         
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if (indexPath.row == 5) {
-            self.performSegue(withIdentifier: "setting", sender: self)
+        if (indexPath.row == 4) {
+            self.performSegue(withIdentifier: "leader", sender: self)
+            return
         }
         
         if (indexPath.row == 0) {
@@ -42,10 +43,14 @@ class MenuVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
         } else if (indexPath.row == 2) {
             self.performSegue(withIdentifier: "analytics", sender: self)
         }
-        else if (indexPath.row == 4) {
+        else if (indexPath.row == 5) {
             confirmLogout()
-        } else {
-            self.performSegue(withIdentifier: "leader", sender: self)
+        }
+        else if (indexPath.row == 6) {
+            self.performSegue(withIdentifier: "setting", sender: self)
+        }
+        else {
+            self.performSegue(withIdentifier: "menucat", sender: self)
         }
     }
     
@@ -103,7 +108,7 @@ class MenuVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 50
     }
     
 

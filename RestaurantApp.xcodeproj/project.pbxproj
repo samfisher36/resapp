@@ -12,8 +12,16 @@
 		93B79FEA26A03CFB0027E749 /* AmountTransferVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B79FE926A03CFB0027E749 /* AmountTransferVC.swift */; };
 		93B79FEC26A03D9D0027E749 /* Transfer1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B79FEB26A03D9D0027E749 /* Transfer1.swift */; };
 		93B79FEE26A03DB60027E749 /* Transfer2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B79FED26A03DB60027E749 /* Transfer2.swift */; };
-		93B79FF026A0517C0027E749 /* InvoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B79FEF26A0517C0027E749 /* InvoiceVC.swift */; };
 		93B79FF226A0640F0027E749 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B79FF126A0640F0027E749 /* SettingVC.swift */; };
+		93C7F57326A6ABB0005DFFA2 /* MenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C7F57226A6ABB0005DFFA2 /* MenuHeader.swift */; };
+		93C7F57526A6AFBB005DFFA2 /* SaveFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C7F57426A6AFBB005DFFA2 /* SaveFooter.swift */; };
+		93C7F57726A6B17A005DFFA2 /* MenuFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C7F57626A6B17A005DFFA2 /* MenuFooter.swift */; };
+		93D97CB226A69C2B00E01274 /* InvoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D97CB126A69C2B00E01274 /* InvoiceVC.swift */; };
+		93D97CB426A69C3F00E01274 /* MenuHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93D97CB326A69C3F00E01274 /* MenuHeader.xib */; };
+		93D97CB626A69D5600E01274 /* MenuFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93D97CB526A69D5600E01274 /* MenuFooter.xib */; };
+		93D97CB826A69E1100E01274 /* SaveFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93D97CB726A69E1100E01274 /* SaveFooter.xib */; };
+		93D97CBA26A6A13C00E01274 /* MenuCategoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D97CB926A6A13C00E01274 /* MenuCategoriesVC.swift */; };
+		93D97CBC26A6A32B00E01274 /* MenuCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D97CBB26A6A32B00E01274 /* MenuCell1.swift */; };
 		AE9E11C7788E6C3E2EC1B638 /* Pods_RestaurantApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FABE5B7314615EA2B36EEDE6 /* Pods_RestaurantApp.framework */; };
 		C20EEF9425E4EDB30022ACDC /* AnalyticsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20EEF9325E4EDB30022ACDC /* AnalyticsVC.swift */; };
 		C20EEF9725E4F0A40022ACDC /* AnalyticsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20EEF9625E4F0A40022ACDC /* AnalyticsCell.swift */; };
@@ -67,8 +75,16 @@
 		93B79FE926A03CFB0027E749 /* AmountTransferVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountTransferVC.swift; sourceTree = SOURCE_ROOT; };
 		93B79FEB26A03D9D0027E749 /* Transfer1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transfer1.swift; sourceTree = "<group>"; };
 		93B79FED26A03DB60027E749 /* Transfer2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transfer2.swift; sourceTree = "<group>"; };
-		93B79FEF26A0517C0027E749 /* InvoiceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceVC.swift; sourceTree = "<group>"; };
 		93B79FF126A0640F0027E749 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		93C7F57226A6ABB0005DFFA2 /* MenuHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeader.swift; sourceTree = "<group>"; };
+		93C7F57426A6AFBB005DFFA2 /* SaveFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveFooter.swift; sourceTree = "<group>"; };
+		93C7F57626A6B17A005DFFA2 /* MenuFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFooter.swift; sourceTree = "<group>"; };
+		93D97CB126A69C2B00E01274 /* InvoiceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceVC.swift; sourceTree = "<group>"; };
+		93D97CB326A69C3F00E01274 /* MenuHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuHeader.xib; sourceTree = "<group>"; };
+		93D97CB526A69D5600E01274 /* MenuFooter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuFooter.xib; sourceTree = "<group>"; };
+		93D97CB726A69E1100E01274 /* SaveFooter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SaveFooter.xib; sourceTree = "<group>"; };
+		93D97CB926A6A13C00E01274 /* MenuCategoriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCategoriesVC.swift; sourceTree = "<group>"; };
+		93D97CBB26A6A32B00E01274 /* MenuCell1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell1.swift; sourceTree = "<group>"; };
 		C20EEF9325E4EDB30022ACDC /* AnalyticsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsVC.swift; sourceTree = "<group>"; };
 		C20EEF9625E4F0A40022ACDC /* AnalyticsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsCell.swift; sourceTree = "<group>"; };
 		C20EEFD825E53A140022ACDC /* DetailHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailHeader.xib; sourceTree = "<group>"; };
@@ -169,8 +185,9 @@
 				C240F71625EF9BB70023B5C6 /* LoginVC.swift */,
 				C2B25457269ECC9E00BD2B8B /* LeadeboardVC.swift */,
 				93B79FE926A03CFB0027E749 /* AmountTransferVC.swift */,
-				93B79FEF26A0517C0027E749 /* InvoiceVC.swift */,
 				93B79FF126A0640F0027E749 /* SettingVC.swift */,
+				93D97CB126A69C2B00E01274 /* InvoiceVC.swift */,
+				93D97CB926A6A13C00E01274 /* MenuCategoriesVC.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -197,6 +214,13 @@
 				C2B25454269EBB1600BD2B8B /* NavTitle.swift */,
 				C2B7B193269EF2C700CE0107 /* LeaderboardCell.swift */,
 				C27F148F26A01DA200A89987 /* PrevHeader.xib */,
+				93D97CB326A69C3F00E01274 /* MenuHeader.xib */,
+				93D97CB526A69D5600E01274 /* MenuFooter.xib */,
+				93D97CB726A69E1100E01274 /* SaveFooter.xib */,
+				93D97CBB26A6A32B00E01274 /* MenuCell1.swift */,
+				93C7F57226A6ABB0005DFFA2 /* MenuHeader.swift */,
+				93C7F57426A6AFBB005DFFA2 /* SaveFooter.swift */,
+				93C7F57626A6B17A005DFFA2 /* MenuFooter.swift */,
 			);
 			path = xibs;
 			sourceTree = "<group>";
@@ -331,13 +355,16 @@
 				C2D5938925DA5CB000D10201 /* ItemDetailsHeader.xib in Resources */,
 				C2D5936E25DA585600D10201 /* LaunchScreen.storyboard in Resources */,
 				C214AA8125E0F41200DCA73C /* AddItemView.xib in Resources */,
+				93D97CB626A69D5600E01274 /* MenuFooter.xib in Resources */,
 				C2B9F15E25DD248700074F3D /* GetBillFooter.xib in Resources */,
+				93D97CB426A69C3F00E01274 /* MenuHeader.xib in Resources */,
 				C2D5936B25DA585600D10201 /* Assets.xcassets in Resources */,
 				93123BD9269C4D70003A507D /* MainHeader.xib in Resources */,
 				C20EEFD925E53A140022ACDC /* DetailHeader.xib in Resources */,
 				C2B25452269EBAB500BD2B8B /* NavTitle.xib in Resources */,
 				C26944C925E6897300C8EA44 /* GoogleService-Info.plist in Resources */,
 				C2D5939725DA676C00D10201 /* ItemShowFooter.xib in Resources */,
+				93D97CB826A69E1100E01274 /* SaveFooter.xib in Resources */,
 				C27F149026A01DA200A89987 /* PrevHeader.xib in Resources */,
 				C2D5936625DA585500D10201 /* Main.storyboard in Resources */,
 			);
@@ -398,11 +425,13 @@
 				C2D5937F25DA5A7500D10201 /* NetworkManager.swift in Sources */,
 				C214AA7E25E0F24500DCA73C /* CartList.swift in Sources */,
 				C2D5936325DA585500D10201 /* ViewController.swift in Sources */,
+				93D97CBC26A6A32B00E01274 /* MenuCell1.swift in Sources */,
 				C2D5938625DA5C8400D10201 /* NetworkInteractionDelegate.swift in Sources */,
 				C20EEF9725E4F0A40022ACDC /* AnalyticsCell.swift in Sources */,
 				C2D5938C25DA60F300D10201 /* OrdersItemCell.swift in Sources */,
 				C2B25458269ECC9E00BD2B8B /* LeadeboardVC.swift in Sources */,
 				C2A34DDB25DBD7FD005AE220 /* CustomTableView.swift in Sources */,
+				93C7F57726A6B17A005DFFA2 /* MenuFooter.swift in Sources */,
 				C2A34DF925DC02D4005AE220 /* ItemDetailsHeader.swift in Sources */,
 				C2D5935F25DA585500D10201 /* AppDelegate.swift in Sources */,
 				C2B2544F269DD17000BD2B8B /* MySlider.swift in Sources */,
@@ -411,7 +440,11 @@
 				C258992525E789B700FFD615 /* DetailHeader.swift in Sources */,
 				C2D5937E25DA5A7500D10201 /* NetworkBuilder.swift in Sources */,
 				C2D593A725DA8EB300D10201 /* Extensions.swift in Sources */,
+				93D97CBA26A6A13C00E01274 /* MenuCategoriesVC.swift in Sources */,
+				93C7F57326A6ABB0005DFFA2 /* MenuHeader.swift in Sources */,
 				C2B25455269EBB1600BD2B8B /* NavTitle.swift in Sources */,
+				93C7F57526A6AFBB005DFFA2 /* SaveFooter.swift in Sources */,
+				93D97CB226A69C2B00E01274 /* InvoiceVC.swift in Sources */,
 				93123BDB269C4E93003A507D /* MainHeader.swift in Sources */,
 				C2D593A325DA784000D10201 /* Batch.swift in Sources */,
 				C2D5939D25DA77F000D10201 /* CurrentOrders.swift in Sources */,
@@ -423,7 +456,6 @@
 				C2D5939A25DA695400D10201 /* ItemShowFooter.swift in Sources */,
 				C2B2544C269D7DFE00BD2B8B /* AnalyticsCell1.swift in Sources */,
 				93B79FEC26A03D9D0027E749 /* Transfer1.swift in Sources */,
-				93B79FF026A0517C0027E749 /* InvoiceVC.swift in Sources */,
 				C240F71725EF9BB70023B5C6 /* LoginVC.swift in Sources */,
 				C214AA6425E0F0DC00DCA73C /* PreviousOrdersViewController.swift in Sources */,
 				93B79FEA26A03CFB0027E749 /* AmountTransferVC.swift in Sources */,

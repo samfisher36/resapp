@@ -10,7 +10,7 @@ import UIKit
 
 class Constant: NSObject {
  
-  //static private let DOMAIN_NAME = "https://backend.pearpartner.com/"
+    //static private let DOMAIN_NAME = "https://backend.pearpartner.com/"
     
     static private let DOMAIN_NAME = "https://staging.pearpartner.com/"
     
@@ -20,6 +20,10 @@ class Constant: NSObject {
         
         //static let TRIAL: String
         //    = DOMAIN_NAME + "restaurant/9999"
+        
+        
+        static let SEND_VER: String
+            = DOMAIN_NAME + "user/update_app_version"
         
         static let LEADERBOARD: String
             = DOMAIN_NAME + "analytics/restaurant/NPDleaderboard/"

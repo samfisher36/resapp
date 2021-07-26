@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="Chevron_left" data-name="Chevron left" transform="translate(0 24) rotate(-90)">
+    <rect id="Bounds" class="cls-1" width="24" height="24"/>
+    <path id="Icon" d="M7.4,10.6,6,12,0,6,6,0,7.4,1.4,2.8,6Z" transform="translate(8 6)"/>
+  </g>
+</svg>

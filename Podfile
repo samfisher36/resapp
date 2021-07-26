@@ -16,6 +16,9 @@ pod 'SDWebImage'
 pod 'CalendarDateRangePickerViewController'
 pod 'SwiftyJSON'
 pod "TPKeyboardAvoidingSwift"
+
+pod 'Firebase/RemoteConfig'
+
   # Pods for RestaurantApp
 
 end

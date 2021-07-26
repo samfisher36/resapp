@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SaveFooter" customModule="RestaurantApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="76"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V4F-pe-Jdj">
+                    <rect key="frame" x="20" y="21" width="207" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgI-y4-eLy">
+                    <rect key="frame" x="247" y="23" width="100" height="30"/>
+                    <color key="backgroundColor" red="0.65797603130000004" green="0.7264822125" blue="0.2979184091" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="FOW-Gv-W1A"/>
+                    </constraints>
+                    <state key="normal" title="Save">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E53-DR-6S5">
+                    <rect key="frame" x="380" y="26" width="24" height="24"/>
+                    <state key="normal" image="del"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="qgI-y4-eLy" firstAttribute="leading" secondItem="V4F-pe-Jdj" secondAttribute="trailing" constant="20" id="Ljb-oD-xyr"/>
+                <constraint firstItem="V4F-pe-Jdj" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="U23-FE-haR"/>
+                <constraint firstItem="E53-DR-6S5" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="UGu-rK-Mqg"/>
+                <constraint firstItem="V4F-pe-Jdj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Xmx-vn-tYK"/>
+                <constraint firstItem="qgI-y4-eLy" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="cRc-fW-27C"/>
+                <constraint firstItem="V4F-pe-Jdj" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.5" id="m8r-Xf-bVU"/>
+                <constraint firstAttribute="trailing" secondItem="E53-DR-6S5" secondAttribute="trailing" constant="10" id="yI9-OP-y72"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="name" destination="V4F-pe-Jdj" id="VQw-Ts-Fgf"/>
+            </connections>
+            <point key="canvasLocation" x="19" y="329"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="del" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
